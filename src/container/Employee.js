@@ -6,6 +6,9 @@ import { Link } from 'react-router';
 
 
 class Employee extends React.Component {
+  state={
+    showFormBlock:false
+  }
   constructor(props) {
     super(props);
     if(this.props.employeeList==0){
@@ -44,12 +47,26 @@ class Employee extends React.Component {
   deleteClickHandler=(id)=>{
     this.props.deleteEmp(id);
   }
+  
+  showForm=()=>{
+    if(!this.state.showFormBlock){
+      return <div></div>;
+    }
+    return <div class="formBlock">
+      
+    </div>;
+  }
+  
+  onAddEmployeeClick=()=>{
+    this.setState({showFormBlock:!this.state.showFormBlock});
+  }
 
   render() {
     return (
       <div className="wrapper">
         <div className="container">
-          <h1>Employee List  <span className="shiftRight"><span className="colored">{this.props.employeeList.length}</span> Employee</span></h1>
+          <h1>Employee List <p className="addEmployee" onClick={this.onAddEmployeeClick}>Add a Employee</p> <span className="shiftRight"><span className="colored">{this.props.employeeList.length}</span> Employee</span> </h1>
+          {this.showForm()}
           {this.props.employeeList.map((employee)=>{ return this.showEmplyee(employee)})}
         </div>
       </div>
@@ -62,7 +79,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps({employeeList}){
-  console.log(employeeList);
   return {employeeList};
 }
 

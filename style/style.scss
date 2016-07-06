@@ -53,6 +53,15 @@ h1 {
     .colored {
         color: $primary-color;
     }
+    .addEmployee{
+        background: #a3ef99;
+        padding: 5px;
+        font-size: 14px;
+        display: inline-block;
+        color: #fff;
+        float: right;
+        margin: 0 0px 0 5px;
+    }
 }
 
 .employee {
