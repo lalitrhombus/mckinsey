@@ -11,21 +11,21 @@ let Employee=[
       id:2,
       name:"Abhishek",
       pic:"2.jpg",
-      designation:"Tech Lead"
+      designation:"Tech Lead",
       address:"Gurgaon"
     },
     {
       id:3,
       name:"Nitin",
       pic:"3.jpg",
-      designation:"Manager"
+      designation:"Manager",
       address:"Gurgaon"
     },
     {
       id:4,
       name:"Chirag",
       pic:"4.jpg",
-      designation:"Network Engineer"
+      designation:"Network Engineer",
       address:"Noida"
     }
 ];
