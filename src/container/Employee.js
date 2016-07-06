@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {initApp} from '../actions/index';
+import {initApp,deleteEmp} from '../actions/index';
 import { Link } from 'react-router';
 
 
@@ -13,14 +13,36 @@ class Employee extends React.Component {
     }
   }
 
-  showEmplyee(employee){
+  showEmplyee=(employee)=>{
     return(
-      <Link to={`/employee/${employee.id}`} className="employee" key={employee.id}>
-          <img src={`public/employeePhoto/${employee.pic}`} alt="" className=""/>
-          <p>{employee.name}</p>
+      <div className="employee" key={employee.id}>
+          <Link to={`/employee/${employee.id}`}><img src={`public/employeePhoto/${employee.pic}`} alt="" className=""/></Link>
+          <div className="employeeData">
+            <div className="centerd">
+              <p className="employeeName"><Link to={`/employee/${employee.id}`}>{employee.name}</Link></p>
+              <p className="employeeDesignation">{employee.designation}</p>
+              <p className="employeeAddress">{employee.address}</p>
+            </div>
+          </div>
           <p className="employeeId"><span className="filled">{employee.id}</span>id</p>
-      </Link>
+          <p className="deleteBtn topBtn" onClick={this.deleteClickHandler.bind(this,employee.id)}>
+            <svg>
+              <use xlinkHref={`public/iconSprite.svg#icon-delete`}></use>
+            </svg>
+            Delete
+          </p>
+          <p className="editBtn topBtn">
+            <svg>
+              <use xlinkHref={`public/iconSprite.svg#icon-edit`}></use>
+            </svg>
+            Edit
+          </p>
+      </div>
     )
+  }
+
+  deleteClickHandler=(id)=>{
+    this.props.deleteEmp(id);
   }
 
   render() {
@@ -36,10 +58,11 @@ class Employee extends React.Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({initApp}, dispatch);
+  return bindActionCreators({initApp,deleteEmp}, dispatch);
 }
 
 function mapStateToProps({employeeList}){
+  console.log(employeeList);
   return {employeeList};
 }
 
