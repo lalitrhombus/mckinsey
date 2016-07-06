@@ -1,0 +1,135 @@
+@import 'variables.scss';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+
+body{
+  background: $body-background;
+}
+*{
+  box-sizing: border-box;
+}
+.wrapper{
+  width: 100%;
+}
+.container{
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 50px;
+  @media (max-width: 500px) {
+    padding: 0 10px;    
+  }
+}
+
+
+
+header {
+    background: $primary-color;
+    .logo {
+        background: #fff;
+        height: 50px;
+        width: 100%;
+        box-shadow: 0px 0px 2px #aaa;
+        position: relative;
+        z-index: 2;
+        img {
+            display: block;
+            height: 100%;
+            margin: auto;
+        }
+    }
+}
+
+h1 {
+    color: $text-grey-color;
+    border-bottom: 1px solid $text-grey-color;
+    margin: 20px 0 20px 0;
+    font-size: 18px;
+    padding: 5px 10px;
+    .shiftRight {
+        float: right;
+        line-height: 30px;
+        color: $dark-grey-color;
+        font-size: 12px;
+    }
+    .colored {
+        color: $primary-color;
+    }
+}
+
+.employee {
+    background: #fff;
+    margin: 20px auto;
+    border-top-left-radius: 75px;
+    border-bottom-left-radius: 75px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 2px solid #fff;
+    overflow: hidden;
+    font-size: 0;
+    cursor: pointer;
+    display: block;
+    max-width: 520px;
+    position: relative;
+    img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        display: inline-block;
+        width: 150px;
+        margin-left: -2px;
+        vertical-align: top;
+    }
+    p {
+        font-size: 18px;
+        min-width: calc(100% - 150px);
+        text-align: center;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        line-height: 146px;
+        color: $dark-grey-color;
+        text-transform: capitalize;
+    }
+    .employeeId{
+      position: absolute;
+      left: 122px;
+      bottom: 0%;
+      width: 50px;
+      line-height: 26px;
+      display: inline-block;
+      margin: 0;padding: 0;
+      font-size: 0;
+      min-width: initial;
+      span{
+        background: $body-background;
+        font-size: 12px;
+        width: 20px;
+        height: 26px;
+        display: inline-block;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        color: $dark-grey-color;
+      }
+      .filled{
+        background: #d52e2f;
+        color: #fff;
+        width: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        border-top-left-radius: 13px;
+        border-bottom-left-radius: 13px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+    }
+    &:hover {
+        border: 2px solid $primary-color;
+        p {
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
