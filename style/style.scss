@@ -200,3 +200,45 @@ h1 {
         color: #f9a0a0;
     }
 }
+
+.formBlock{
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 520px;
+    margin: auto;
+    margin-bottom: 2px;
+    .inputBox{
+        border: 1px solid #f8f8f8;
+        padding: 20px;
+        margin-bottom: 5px; 
+        label{
+            display: block;
+            color: #aaa;
+        }
+        input{
+            display: block;
+            border: 1px solid #f8f8f8;
+            margin-top: 4px;
+            width: 100%;
+            color: #aaa;
+            height: 40px;
+            padding: 5px;
+            box-shadow: none;
+        }
+    }
+    button{
+        width: 30%;
+        min-width: 300px;
+        height: 40px;
+        line-height: 40px;
+        background: #a3ef99;
+        text-align: center;
+        margin: auto;
+        display: block;
+        box-shadow: none;
+        border: none;
+        color: green;
+        border-radius: 5px;
+    }
+}

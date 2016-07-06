@@ -1,5 +1,8 @@
 export const INIT_APP = 'INIT_APP';
 export const DELETE_EMP = 'DELETE_EMP';
+export const ADD_EMP = 'ADD_EMP';
+export const EDIT_EMP = 'EDIT_EMP';
+
 
 let Employee=[
     {
@@ -44,5 +47,19 @@ export function deleteEmp(id){
   return {
     type: DELETE_EMP,
     payload: id
+  }  
+}
+
+export function addEmployee(data){
+  return {
+    type: ADD_EMP,
+    payload: data
+  }  
+}
+
+export function editEmployee(data){
+  return {
+    type: EDIT_EMP,
+    payload: data
   }  
 }
